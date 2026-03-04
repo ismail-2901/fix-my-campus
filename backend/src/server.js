@@ -4,9 +4,9 @@ const express =require("express");
 const cors =require("cors");
 const bcrypt =require("bcryptjs");
 const fs =require("fs/promises");
-const path = require("path");
-const { sql } = require("./db");
-const { createToken, requireAuth } = require("./auth");
+const path =require("path");
+const { sql } =require("./db");
+const { createToken,requireAuth } = require("./auth");
 
 if (!process.env.JWT_SECRET) {
   throw new Error("JWT_SECRET is not configured");

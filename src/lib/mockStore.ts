@@ -12,7 +12,6 @@ export interface FeedComment {
   parent_id: string | null;
   profiles?: { anon_name: string };
 }
-
 export interface FeedPost {
   id: string;
   content: string;

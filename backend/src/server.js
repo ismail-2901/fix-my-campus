@@ -1,9 +1,9 @@
 require("dotenv").config();
 
-const express = require("express");
-const cors = require("cors");
-const bcrypt = require("bcryptjs");
-const fs = require("fs/promises");
+const express =require("express");
+const cors =require("cors");
+const bcrypt =require("bcryptjs");
+const fs =require("fs/promises");
 const path = require("path");
 const { sql } = require("./db");
 const { createToken, requireAuth } = require("./auth");

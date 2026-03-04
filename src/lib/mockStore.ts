@@ -75,11 +75,9 @@ const request = async <T>(path: string, init?: RequestInit): Promise<T> => {
   if (response.status === 204) {
     return undefined as T;
   }
-
   const payload = (await response.json()) as ApiResponse<T>;
   return payload.data;
 };
-
 export const getCurrentUser = async () => {
   const token = getToken();
   if (!token) return null;

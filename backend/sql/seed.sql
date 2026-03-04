@@ -12,5 +12,4 @@ WHERE u.email = 'alex@diu.edu.bd'
     SELECT 1
     FROM posts p
     WHERE p.user_id = u.id
-      AND p.content = 'Library AC is not working on the 4th floor.'
-  );
+      AND p.content = 'Library AC is not working on the 4th floor.' );

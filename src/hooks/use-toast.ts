@@ -49,14 +49,12 @@ type Action =
 interface State {
   toasts: ToasterToast[];
 }
-
 const toastTimeouts = new Map<string, ReturnType<typeof setTimeout>>();
 
 const addToRemoveQueue = (toastId: string) => {
   if (toastTimeouts.has(toastId)) {
     return;
   }
-
   const timeout = setTimeout(() => {
     toastTimeouts.delete(toastId);
     dispatch({
@@ -67,7 +65,6 @@ const addToRemoveQueue = (toastId: string) => {
 
   toastTimeouts.set(toastId, timeout);
 };
-
 export const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case "ADD_TOAST":
@@ -81,7 +78,6 @@ export const reducer = (state: State, action: Action): State => {
         ...state,
         toasts: state.toasts.map((t) => (t.id === action.toast.id ? { ...t, ...action.toast } : t)),
       };
-
     case "DISMISS_TOAST": {
       const { toastId } = action;
 
@@ -94,7 +90,6 @@ export const reducer = (state: State, action: Action): State => {
           addToRemoveQueue(toast.id);
         });
       }
-
       return {
         ...state,
         toasts: state.toasts.map((t) =>

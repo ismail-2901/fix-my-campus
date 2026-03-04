@@ -8,7 +8,7 @@ const createToken=(user) => {
       anonName: user.anon_name,
     },
     process.env.JWT_SECRET,
-    { expiresIn: "7d" }
+    { expiresIn:"7d"}
   );
 };
 

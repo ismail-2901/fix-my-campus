@@ -49,7 +49,7 @@ const ensureSchema = async () => {
   }
 };
 
-const formatUser = (row) => ({
+const formatUser =(row) => ({
   id: row.id,
   email: row.email,
   anonName: row.anon_name,

@@ -34,6 +34,6 @@ CREATE TABLE IF NOT EXISTS comments (
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
-CREATE INDEX IF NOT EXISTS idx_posts_created_at ON posts (created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_posts_created_at ON posts (created_at DESC) ;
 CREATE INDEX IF NOT EXISTS idx_likes_post_id ON likes (post_id);
 CREATE INDEX IF NOT EXISTS idx_comments_post_id ON comments (post_id);

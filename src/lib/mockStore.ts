@@ -48,7 +48,6 @@ const request = async <T>(path: string, init?: RequestInit): Promise<T> => {
   if (token) {
     headers.set("Authorization", `Bearer ${token}`);
   }
-
   let response: Response;
   try {
     response = await fetch(`${API_BASE_URL}${path}`, {

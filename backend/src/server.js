@@ -12,8 +12,8 @@ if (!process.env.JWT_SECRET) {
   throw new Error("JWT_SECRET is not configured");
 }
 
-const app = express();
-const port = Number(process.env.PORT || 4000);
+const app =express();
+const port =Number(process.env.PORT || 4000);
 const configuredOrigin = process.env.CORS_ORIGIN || "http://localhost:5173";
 
 const isAllowedOrigin = (origin) => {
